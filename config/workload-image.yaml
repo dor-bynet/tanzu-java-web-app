@@ -1,10 +1,10 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: tanzu-java-web-app
+  name: tanzu-java-app
   labels:
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: tanzu-java-web-app
+    app.kubernetes.io/part-of: tanzu-java-app
 spec:
   params:
   - name: annotations
@@ -13,5 +13,5 @@ spec:
       autoscaling.knative.dev/target: "10"
       autoscaling.knative.dev/window: "10s"
       autoscaling.knative.dev/max-scale: "5"
-      autoscaling.knative.dev/min-scale: "0"
+      autoscaling.knative.dev/min-scale: "1"
   image: registry.cloud-garage.net/ages/tanzu-java-web-app-apps:latest
